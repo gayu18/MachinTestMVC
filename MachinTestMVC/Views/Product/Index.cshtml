@@ -1,0 +1,26 @@
+﻿@model MachinTest.Models.Product
+@model IEnumerable<MachinTest.Models.Product>
+
+<h2>Index</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>ProductId</th>
+            <th>ProductName</th>
+            <th>CategoryId</th>
+            <th>CategoryName</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ProductId</td>
+                <td>@item.ProductName</td>
+                <td>@item.CategoryId</td>
+                <td>@item.Category.CategoryName</td>
+            </tr>
+        }
+    </tbody>
+</table>

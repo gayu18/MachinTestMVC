@@ -1,0 +1,29 @@
+﻿@model MachinTest.Models.Category
+@model IEnumerable<MachinTest.Models.Category>
+
+
+<h2>Index</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>CategoryId</th>
+            <th>CategoryName</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var category in Model)
+        {
+            <tr>
+                <td>@category.CategoryId</td>
+                <td>@category.CategoryName</td>
+                <td>
+                    <a href="/Category/Edit/@category.CategoryId">Edit</a> |
+                    <a href="/Category/Delete/@category.CategoryId">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
